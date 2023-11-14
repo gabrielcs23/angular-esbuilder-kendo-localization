@@ -1,0 +1,112 @@
+// Compatible with @progress/kendo-theme-bootstrap v.6.4.0
+
+$tb-kendo-is-dark-theme: false;
+$tb-kendo-border-radius: 0.25rem;
+$tb-kendo-color-success: #15a93f;
+$tb-kendo-color-warning: #ffc107;
+$tb-kendo-body-bg: #ffffff;
+$tb-kendo-body-text: #212529;
+$tb-kendo-subtle-text: $grey;
+$tb-kendo-disabled-text: #bababa;
+$tb-kendo-base-bg: #f8f9fa;
+$tb-kendo-hover-bg: #e9ecef;
+$tb-kendo-hover-text: #16181b;
+$tb-kendo-selected-text: #ffffff;
+$tb-kendo-button-bg: #e4e7eb;
+$tb-kendo-color-primary: $blue;
+$tb-kendo-color-secondary: $grey;
+$tb-kendo-color-info: $cyan;
+$tb-kendo-color-danger: $danger;
+$tb-kendo-component-bg: $tb-kendo-body-bg;
+$tb-kendo-component-text: $tb-kendo-body-text;
+$tb-kendo-base-text: $tb-kendo-body-text;
+$tb-kendo-selected-bg: $tb-kendo-color-primary;
+$tb-kendo-button-text: $tb-kendo-component-text;
+$tb-kendo-link-text: $tb-kendo-color-primary;
+$tb-kendo-link-hover-text: $darkBlue;
+$tb-kendo-series-a: $tb-kendo-color-primary;
+$tb-kendo-series-b: $tb-kendo-color-secondary;
+$tb-kendo-series-c: $tb-kendo-color-info;
+$tb-kendo-series-d: $tb-kendo-color-success;
+$tb-kendo-series-e: $tb-kendo-color-warning;
+$tb-kendo-series-f: $tb-kendo-color-danger;
+
+$kendo-is-dark-theme: $tb-kendo-is-dark-theme;
+$kendo-border-radius: $tb-kendo-border-radius;
+$kendo-color-success: $tb-kendo-color-success;
+$kendo-color-warning: $tb-kendo-color-warning;
+$kendo-body-bg: $tb-kendo-body-bg;
+$kendo-body-text: $tb-kendo-body-text;
+$kendo-subtle-text: $tb-kendo-subtle-text;
+$kendo-disabled-text: $tb-kendo-disabled-text;
+$kendo-base-bg: $tb-kendo-base-bg;
+$kendo-hover-bg: $tb-kendo-hover-bg;
+$kendo-hover-text: $tb-kendo-hover-text;
+$kendo-selected-text: $tb-kendo-selected-text;
+$kendo-button-bg: $tb-kendo-button-bg;
+$kendo-color-primary: $tb-kendo-color-primary;
+$kendo-color-secondary: $tb-kendo-color-secondary;
+$kendo-color-info: $tb-kendo-color-info;
+$kendo-color-danger: $tb-kendo-color-danger;
+$kendo-component-bg: $tb-kendo-component-bg;
+$kendo-component-text: $tb-kendo-component-text;
+$kendo-base-text: $tb-kendo-base-text;
+$kendo-selected-bg: $tb-kendo-selected-bg;
+$kendo-button-text: $tb-kendo-button-text;
+$kendo-link-text: $tb-kendo-link-text;
+$kendo-link-hover-text: $tb-kendo-link-hover-text;
+$kendo-series-a: $tb-kendo-series-a;
+$kendo-series-b: $tb-kendo-series-b;
+$kendo-series-c: $tb-kendo-series-c;
+$kendo-series-d: $tb-kendo-series-d;
+$kendo-series-e: $tb-kendo-series-e;
+$kendo-series-f: $tb-kendo-series-f;
+$kendo-font-family: inherit;
+$kendo-font-size: 1rem;
+$kendo-font-weight-normal: 400;
+$kendo-line-height: 1.25;
+
+$kendo-enable-gradients: true;
+
+$tb-typography: (
+  kendo-default-typography: (
+    font-family: "inherit",
+    font-size: 1rem,
+    font-weight: 400,
+    line-height: 1.25,
+  ),
+);
+
+@mixin typography-classes($typography) {
+  @each $selector, $property in $typography {
+    &-#{$selector} {
+      @each $propName, $propValue in $property {
+        #{$propName}: #{$propValue};
+      }
+    }
+  }
+}
+
+$tb-effects: (
+  tb-internal-none-effects: (
+    box-shadow: (
+      none,
+    ),
+    filter: (
+      none,
+    ),
+    backdrop-filter: (
+      none,
+    ),
+  ),
+);
+
+@mixin effects-classes($effects) {
+  @each $selector, $property in $effects {
+    &-#{$selector} {
+      @each $propName, $propValue in $property {
+        #{$propName}: $propValue;
+      }
+    }
+  }
+}

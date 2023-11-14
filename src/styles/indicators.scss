@@ -1,0 +1,54 @@
+@use "mixins" as mixin;
+
+@mixin color-pallet {
+  .app-no-marker {
+    border: unset;
+  }
+
+  .app-white {
+    background-color: #ffffff;
+  }
+
+  .app-green {
+    background-color: #00ff00;
+  }
+
+  .app-dark-green {
+    background-color: #079c07;
+  }
+
+  .app-yellow {
+    background-color: #ffda20;
+  }
+
+  .app-red {
+    background-color: #ff0000;
+  }
+
+  .app-cyan {
+    background-color: #00e1ff;
+  }
+
+  .app-purple {
+    background-color: #750bee;
+  }
+
+  .app-royal-orange {
+    background-color: #f48941;
+  }
+
+  .app-blue {
+    background-color: #0070ba;
+  }
+}
+/** Общие стили для таблиц маркеров */
+.app-state-indicator-table {
+  @include mixin.paintable-grid;
+
+  .app-full-cell {
+    width: 80%;
+    right: 10%;
+  }
+
+  @include color-pallet;
+}

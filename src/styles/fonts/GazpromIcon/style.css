@@ -1,0 +1,419 @@
+@font-face {
+  font-family: 'GazpromIcon';
+  src:
+    url('fonts/GazpromIcon.ttf?vdh8wv') format('truetype'),
+    url('fonts/GazpromIcon.woff?vdh8wv') format('woff'),
+    url('fonts/GazpromIcon.svg?vdh8wv#GazpromIcon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.app-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'GazpromIcon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-icon_notary-deposit:before {
+  content: "\e97b";
+}
+.app-icon_reassignment-docs:before {
+  content: "\e97c";
+}
+.app-icon_forest-declaration:before {
+  content: "\e97d";
+}
+.app-icon_forest-usage:before {
+  content: "\e97e";
+}
+.app-icon_source-docs:before {
+  content: "\e97f";
+}
+.app-icon_compensation-orders:before {
+  content: "\e980";
+}
+.app-icon_payment-reassignment:before {
+  content: "\e981";
+}
+.app-icon_registration-rights-info:before {
+  content: "\e982";
+}
+.app-icon_airports:before {
+  content: "\e973";
+}
+.app-icon_bus-stations:before {
+  content: "\e972";
+}
+.app-icon_customer-bases:before {
+  content: "\e974";
+}
+.app-icon_contractor-bases:before {
+  content: "\e975";
+}
+.app-icon_water-channel:before {
+  content: "\e976";
+}
+.app-icon_railway-stations:before {
+  content: "\e977";
+}
+.app-icon_treatment:before {
+  content: "\e978";
+}
+.app-icon_landfills:before {
+  content: "\e979";
+}
+.app-icon_ports:before {
+  content: "\e97a";
+}
+.app-icon_computed-field:before {
+  content: "\e971";
+}
+.app-icon_acts:before {
+  content: "\e958";
+}
+.app-icon_confirmation-documents:before {
+  content: "\e959";
+}
+.app-icon_documents:before {
+  content: "\e95a";
+}
+.app-icon_return:before {
+  content: "\e95b";
+}
+.app-icon_pikzu-compensation:before {
+  content: "\e95c";
+}
+.app-icon_addition-doc:before {
+  content: "\e95d";
+}
+.app-icon_additions:before {
+  content: "\e95e";
+}
+.app-icon_history:before {
+  content: "\e95f";
+}
+.app-icon_finance-limits:before {
+  content: "\e960";
+}
+.app-icon_geometry-object:before {
+  content: "\e961";
+}
+.app-icon_encumbrance:before {
+  content: "\e962";
+}
+.app-icon_transition-from-documents:before {
+  content: "\e963";
+}
+.app-icon_plan:before {
+  content: "\e964";
+}
+.app-icon_payments-plan-1:before {
+  content: "\e965";
+}
+.app-icon_payments-plan:before {
+  content: "\e966";
+}
+.app-icon_event-plans-research:before {
+  content: "\e967";
+}
+.app-icon_event-plans-construction:before {
+  content: "\e968";
+}
+.app-icon_event-plans:before {
+  content: "\e969";
+}
+.app-icon_payment-orders:before {
+  content: "\e96a";
+}
+.app-icon_holders:before {
+  content: "\e96b";
+}
+.app-icon_water-bodies:before {
+  content: "\e96c";
+}
+.app-icon_forest:before {
+  content: "\e96d";
+}
+.app-icon_usage-doc:before {
+  content: "\e96e";
+}
+.app-icon_pikzu-funds:before {
+  content: "\e96f";
+}
+.app-icon_summary-reports:before {
+  content: "\e970";
+}
+.app-icon_registrations:before {
+  content: "\e954";
+}
+.app-icon_agency-contract:before {
+  content: "\e94f";
+}
+.app-icon_side-events:before {
+  content: "\e950";
+}
+.app-icon_import:before {
+  content: "\e951";
+}
+.app-icon_tsobject:before {
+  content: "\e952";
+}
+.app-icon_funds:before {
+  content: "\e953";
+}
+.app-icon_transport:before {
+  content: "\e955";
+}
+.app-icon_reports1:before {
+  content: "\e956";
+}
+.app-icon_notification:before {
+  content: "\e957";
+}
+.app-icon_land-contracts:before {
+  content: "\e94b";
+}
+.app-icon_land-return-docs:before {
+  content: "\e94c";
+}
+.app-icon_land-plots:before {
+  content: "\e94d";
+}
+.app-icon_pikzu:before {
+  content: "\e94e";
+}
+.app-icon_opi-movement:before {
+  content: "\e93f";
+}
+.app-icon_opi-daily-operation-volumes:before {
+  content: "\e940";
+}
+.app-icon_opi-reports-docs:before {
+  content: "\e941";
+}
+.app-icon_opi-reports:before {
+  content: "\e942";
+}
+.app-icon_opi-acceptance:before {
+  content: "\e943";
+}
+.app-icon_opi-measurements:before {
+  content: "\e944";
+}
+.app-icon_opi-summaries:before {
+  content: "\e945";
+}
+.app-icon_opi-demands:before {
+  content: "\e946";
+}
+.app-icon_opi-orders:before {
+  content: "\e947";
+}
+.app-icon_opi-accounting:before {
+  content: "\e948";
+}
+.app-icon_opi-daily-operation-results:before {
+  content: "\e949";
+}
+.app-icon_opi-project-summary:before {
+  content: "\e94a";
+}
+.app-icon_materials:before {
+  content: "\e900";
+}
+.app-icon_transport-objects:before {
+  content: "\e901";
+}
+.app-icon_params:before {
+  content: "\e902";
+}
+.app-icon_tprk-protocol:before {
+  content: "\e903";
+}
+.app-icon_templates:before {
+  content: "\e904";
+}
+.app-icon_opi-daily-operation:before {
+  content: "\e932";
+}
+.app-icon_opi-monthly-production:before {
+  content: "\e933";
+}
+.app-icon_opi-expenses:before {
+  content: "\e934";
+}
+.app-icon_opi-requests:before {
+  content: "\e935";
+}
+.app-icon_opi-volumes:before {
+  content: "\e936";
+}
+.app-icon_opi-supplies:before {
+  content: "\e937";
+}
+.app-icon_minerals-restrictions:before {
+  content: "\e938";
+}
+.app-icon_tprk:before {
+  content: "\e939";
+}
+.app-icon_airway:before {
+  content: "\e928";
+}
+.app-icon_railway:before {
+  content: "\e929";
+}
+.app-icon_purchases-statuses:before {
+  content: "\e92a";
+}
+.app-icon_routing:before {
+  content: "\e92b";
+}
+.app-icon_waterway:before {
+  content: "\e92c";
+}
+.app-icon_purchases-subjects:before {
+  content: "\e92d";
+}
+.app-icon_contracts-subjects:before {
+  content: "\e92e";
+}
+.app-icon_contracts-volumes:before {
+  content: "\e92f";
+}
+.app-icon_automotive:before {
+  content: "\e930";
+}
+.app-icon_contracts-expenses:before {
+  content: "\e931";
+}
+.app-icon_support:before {
+  content: "\e90f";
+}
+.app-icon_feedback:before {
+  content: "\e910";
+}
+.app-icon_help:before {
+  content: "\e911";
+}
+.app-icon_registries:before {
+  content: "\e912";
+}
+.app-icon_login:before {
+  content: "\e924";
+}
+.app-icon_logout:before {
+  content: "\e925";
+}
+.app-icon_settings:before {
+  content: "\e926";
+}
+.app-icon_hub:before {
+  content: "\e927";
+}
+.app-icon_admin:before {
+  content: "\e905";
+}
+.app-icon_mine-takes:before {
+  content: "\e906";
+}
+.app-icon_distances:before {
+  content: "\e907";
+}
+.app-icon_opi:before {
+  content: "\e908";
+}
+.app-icon_contracts:before {
+  content: "\e909";
+}
+.app-icon_events:before {
+  content: "\e90a";
+}
+.app-icon_purchases:before {
+  content: "\e90b";
+}
+.app-icon_land-takes:before {
+  content: "\e90c";
+}
+.app-icon_building-plots:before {
+  content: "\e90d";
+}
+.app-icon_projects:before {
+  content: "\e90e";
+}
+.app-icon_map:before {
+  content: "\e913";
+}
+.app-icon_quarries:before {
+  content: "\e914";
+}
+.app-icon_offers:before {
+  content: "\e915";
+}
+.app-icon_licenses:before {
+  content: "\e916";
+}
+.app-icon_licenses-uvs:before {
+  content: "\e917";
+}
+.app-icon_models:before {
+  content: "\e918";
+}
+.app-icon_info:before {
+  content: "\e919";
+}
+.app-icon_transport1:before {
+  content: "\e91a";
+}
+.app-icon_oks:before {
+  content: "\e91b";
+}
+.app-icon_minerals:before {
+  content: "\e91c";
+}
+.app-icon_docs:before {
+  content: "\e91d";
+}
+.app-icon_registration:before {
+  content: "\e91e";
+}
+.app-icon_passports:before {
+  content: "\e91f";
+}
+.app-icon_minerals-initial:before {
+  content: "\e920";
+}
+.app-icon_minerals-estimates:before {
+  content: "\e921";
+}
+.app-icon_minerals-volumes:before {
+  content: "\e922";
+}
+.app-icon_files:before {
+  content: "\e923";
+}
+.app-icon_enums:before {
+  content: "\e93a";
+}
+.app-icon_machines:before {
+  content: "\e93b";
+}
+.app-icon_stages:before {
+  content: "\e93c";
+}
+.app-icon_cartography:before {
+  content: "\e93d";
+}
+.app-icon_gis:before {
+  content: "\e93e";
+}

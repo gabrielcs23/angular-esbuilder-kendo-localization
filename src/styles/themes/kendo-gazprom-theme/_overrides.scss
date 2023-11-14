@@ -1,0 +1,327 @@
+/*window*/
+.k-window-title {
+  padding: 0;
+  margin: 0;
+  /* чтобы работало сворачивание текста */
+  display: inline-block;
+}
+.k-window-titlebar-actions {
+  /* убираем слишком большой отрицательный отступ */
+  margin: -0.5em 0;
+}
+
+/*breadcrumb*/
+.k-breadcrumb-item {
+  flex: 1 1 auto;
+
+  .k-breadcrumb-root-link {
+    margin-right: 0;
+  }
+  .k-breadcrumb-link {
+    text-decoration: none;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+.k-breadcrumb-root-item,
+.k-breadcrumb-last-item {
+  flex: 0 0 auto;
+}
+
+/*stepper*/
+.k-stepper {
+  /*даём больше места для надписей шагов степпера*/
+  .k-step-link {
+    max-width: 100%;
+  }
+
+  .k-step-label {
+    max-width: 100%;
+    padding: 0 0.25em;
+
+    .k-step-text {
+      max-width: 100%;
+      /*включаем перенос текста и ограничиваем высоту, чтобы вмешалось больше информации*/
+      max-height: 4em;
+      white-space: normal;
+      word-break: normal;
+    }
+  }
+}
+
+/*menu*/
+.k-menu,
+.k-menu-group {
+  .k-link {
+    &.k-primary {
+      color: $kendo-selected-text;
+      background-color: $kendo-selected-bg;
+
+      &:hover {
+        color: $kendo-selected-hover-text;
+        background-color: $kendo-selected-bg;
+      }
+    }
+  }
+}
+.k-menu-link {
+  /* выравниваем высоту пунктов меню без значка */
+  min-height: calc(#{$kendo-icon-size} + #{$kendo-menu-item-padding-y} * 2);
+
+  .k-text {
+    width: 100%;
+    max-width: 50vw;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+/*switch*/
+.k-switch {
+  /*центруем с помощью flex box*/
+  .k-switch-track {
+    align-items: center;
+  }
+
+  /*убираем старое костыльное выравнивание смещением*/
+  .k-switch-label-on,
+  .k-switch-label-off {
+    transform: none;
+    position: relative;
+    line-height: $kendo-line-height;
+    top: auto;
+    /*показывает текст переключателя*/
+    display: inline;
+  }
+}
+/*при включении - текст слева*/
+.k-switch-on {
+  .k-switch-track {
+    justify-content: start;
+  }
+  .k-switch-label-off {
+    display: none;
+  }
+}
+/*при выключении - текст справа*/
+.k-switch-off {
+  .k-switch-track {
+    justify-content: end;
+  }
+  .k-switch-label-on {
+    display: none;
+  }
+}
+
+/*color*/
+.k-color-warning {
+  /*добавляем тень, чтобы значок предупреждения был лучше виден на светлом фоне*/
+  text-shadow: 0 0 1px currentColor;
+}
+
+/*button*/
+.k-button-flat::after {
+  /*убираем тень от фокуса*/
+  box-shadow: none;
+}
+
+/*pager*/
+.k-pager {
+  .k-pager-sizes {
+    /*авто-ширина пикера размеров, чтобы не обрезало текст*/
+    /*.k-dropdown {*/
+    .k-dropdownlist {
+      min-width: 5em;
+      width: auto;
+    }
+  }
+}
+
+/*form*/
+.k-form-field {
+  display: block;
+}
+
+.k-input-inner {
+  /*убираем 1, чтобы инпуты не лезли вперед отображаемого поверх них контента*/
+  z-index: 0;
+}
+
+.k-input-solid,
+.k-input-outline {
+  .ng-invalid > &,
+  &.ng-invalid {
+    /* показываем тень и без `ng-touched` */
+    &.k-focus,
+    &:focus,
+    &:focus-within {
+      @include focus-indicator($kendo-input-invalid-shadow);
+    }
+  }
+}
+
+/*searchbox*/
+.k-searchbox {
+  /*выравниваем значок по высоте*/
+  display: flex;
+  align-items: center;
+
+  & > .k-icon {
+    /*и добавляем равномерный отступ*/
+    display: inline-flex;
+    margin-left: 0.5rem;
+  }
+}
+
+/*upload*/
+.k-upload {
+  .k-upload-button {
+    cursor: pointer;
+  }
+  .k-upload-status {
+    /*возвращаем пробелы в тексте*/
+    white-space: pre-wrap;
+  }
+  .k-actions {
+    /*правильный порядок вывода кнопок*/
+    flex-direction: row-reverse;
+    /*стилизация границы, отделяющей блок кнопок*/
+    border-top-style: outset;
+  }
+
+  .k-file-summary {
+    /*отступ от информации о файле*/
+    margin-top: 0.5rem;
+  }
+}
+
+/*grid, treelist*/
+.k-grid,
+.k-treelist {
+  .k-table-th,
+  .k-table-td {
+    /*минимальная высота, чтобы строки не были слишком узкими*/
+    height: 3em;
+  }
+
+  /* ////// перенос текста в заголовке ////// */
+  .k-table-td {
+    &.k-text-nowrap {
+      /* возвращаем перенос текста для столбца с иерархией */
+      white-space: normal;
+    }
+  }
+
+  .k-grid-header {
+    /*для выравнивания по вертикальному центру содержимого header grid*/
+    .k-table-th {
+      /* центрируем текст в шапке */
+      vertical-align: middle;
+      /* чтобы работал перенос и центровка в шапке treelist, потому что в нём до сих пор нет единого шаблона шапки */
+      white-space: normal;
+      text-align: center;
+
+      .k-cell-inner {
+        /* ещё центрируем текст */
+        justify-content: center;
+      }
+    }
+
+    /* переносит названия и центрируем текст */
+    .k-column-title {
+      white-space: normal;
+      text-align: center;
+    }
+  }
+  /* ////// перенос текста в заголовке ////// */
+
+  /* ////// границы у всех ячеек ////// */
+  .k-grid-header {
+    /*не убираем границу у последней ячейки шапки*/
+    .k-table-th:last-child {
+      border-inline-start-width: thin;
+    }
+  }
+  .k-grid-header-locked {
+    /*но убираем границу у первой ячейки шапки*/
+    .k-table-th:first-child:last-child {
+      border-inline-start-width: 0;
+    }
+  }
+  .k-grid-header-wrap {
+    /*лишняя граница в конце обёртки столбцов шапки*/
+    border-inline-end-width: 0;
+  }
+  .k-grid-content,
+  .k-grid-content-locked {
+    /*граница ячеек снизу всегда*/
+    .k-table-row:last-child > .k-table-td {
+      border-block-end-width: thin;
+    }
+  }
+  /* ////// границы у всех ячеек ////// */
+
+  /* ////// перенос меню в нижний правый угол ////// */
+  .k-grid-header {
+    .k-table-th.k-filterable {
+      /* паддинг справа по размеру кнопки меню */
+      padding-right: $kendo-button-calc-size;
+
+      .k-cell-inner {
+        /* меняем `flex` на `block`, чтобы работали `absolute`-ы */
+        display: block;
+
+        & > .k-link {
+          /* отступ справа, чтобы длинный текст заголовка не налезал на кнопку меню */
+          padding-inline-end: 1rem;
+        }
+      }
+    }
+
+    /* чтобы установить меню столбца в правом нижнем углу */
+    kendo-grid-column-menu,
+    kendo-treelist-column-menu {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    .k-grid-header-menu {
+      /* убираем отступ справа, чтобы подвинуть к нижней грани */
+      margin-inline-end: 0;
+      /* возвращаем позицию, т.к. теперь родитель absolute */
+      position: static;
+
+      &:focus {
+        box-shadow: none;
+      }
+      &:hover {
+        background: $kendo-selected-bg;
+        color: $kendo-selected-text;
+      }
+    }
+  }
+  /* ////// перенос меню в нижний правый угол ////// */
+}
+.k-grid-lockedcolumns {
+  /*убираем бредовый глобальный nowrap*/
+  white-space: normal;
+}
+.k-grid-columnmenu-popup {
+  /*более адекватные размеры для меню столбца*/
+  min-width: 256px;
+  width: auto;
+
+  /* kendo перезаписывает макс. ширину, из-за чего меню растягивается при выборе длинных записей */
+  &,
+  &.k-popup {
+    max-width: 384px;
+  }
+
+  .k-columnmenu-actions {
+    /*разделяем кнопочки очистки и принятия фильтра*/
+    justify-content: space-between;
+  }
+}

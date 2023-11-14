@@ -1,0 +1,97 @@
+@use "_variables" as *;
+
+@mixin paintable-cell {
+  position: relative;
+}
+@mixin paintable-cell-text {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+@mixin paintable-cell-mark {
+  position: absolute;
+}
+
+@mixin paintable-grid {
+  $markWidth: 1em;
+
+  /*TODO переименовать `code-cell` в `mark-cell`*/
+  .fill-cell,
+  .code-cell {
+    @include paintable-cell;
+  }
+  .code-cell_disabled {
+    .code-cell__color-mark {
+      display: none;
+    }
+  }
+
+  .code-cell__text {
+    @include paintable-cell-text;
+    padding-right: $markWidth;
+  }
+  .code-cell__color-mark {
+    @include paintable-cell-mark;
+    $pad: 0.25em;
+
+    top: $pad;
+    bottom: 0.25em;
+    right: $pad;
+    width: $markWidth;
+    border: $border;
+    border-color: lighten($grey, 33%);
+    border-radius: $pad;
+  }
+
+  .fill-cell__text {
+    @include paintable-cell-text;
+
+    &:not(:empty) + .fill-cell__note::before {
+      content: " ";
+    }
+  }
+  .fill-cell__note {
+    @include paintable-cell-text;
+    display: inline;
+  }
+  .fill-cell__color-mark {
+    @include paintable-cell-mark;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin fancy-header-shape($color, $top, $height, $upperWidth, $lowerWidth) {
+  content: "";
+  position: absolute;
+  background-color: $color;
+  top: $top;
+  right: 0;
+  width: $upperWidth;
+  height: $height;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, #{$upperWidth - $lowerWidth} 100%);
+}
+/*значки приложения*/
+@mixin app-menu-icon {
+  .k-panelbar-item &,
+  .k-panelbar-header & {
+    font-size: #{$iconSize * 1.5};
+    margin-right: $iconPadding;
+    width: 1em;
+  }
+
+  .k-icon-button.k-button-lg & {
+    font-size: #{$iconSize * 1.5};
+  }
+
+  .k-menu-popup & {
+    font-size: #{$iconSize * 1.25};
+  }
+
+  .k-menu-link & {
+    margin-right: $iconPadding;
+    width: 1em;
+  }
+}

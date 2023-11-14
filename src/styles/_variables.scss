@@ -1,0 +1,80 @@
+/*Цвета газпрома*/
+/*TODO: переименовать в названия по категориям (primary/background и т.д.)*/
+
+$blue: #0070ba; /*для заголовков, слоганов, пиктограмм, фона*/
+$cyan: #2fb4e9; /*графика (?)*/
+$darkBlue: #004077 /*для фона, primary-цвет?*/;
+$lightBlue: #0097d8; /*для фона-градиента*/
+$white: #ffffff; /*для фона?*/
+$grey: #706f6f /*для текстов?*/;
+$yellow: #e6ee0b; /*откуда вообще?*/
+$danger: #dc3545;
+
+$shadow: transparentize(#000000, 0.75);
+$borderColor: transparentize($white, 0.5);
+$border: thin solid $borderColor;
+
+$fontFamily: null; // "Proxima Nova Rg", Arial, Helvetica, sans-serif;
+$fontSize: 10pt;
+
+$iconSize: 16px; /* габариты значков */
+$iconPadding: 0.25em;
+
+$inputMargin: 0.7em;
+$inputSectionOffset: 2em;
+/* размеры ширины полей форм */
+$inputLengthSmall: 15em;
+$inputLengthMedium: 30em;
+$inputLengthLarge: 45em;
+
+/* примерная величина смещения надписи влево в неактивном поле */
+$labelOffsetInactive: 1.7em;
+/* размеры отступов надписей полей форм */
+$labelOffsetInput: 2em;
+$labelOffsetPicker: 2em;
+
+/* набор правил размеров полей и отступов надписей для стандартных компонентов */
+$inputWidths: (
+  "k-input": (
+    "inputWidth": $inputLengthSmall,
+    "labelOffset": $labelOffsetInput,
+  ),
+  "k-numerictextbox": (
+    "inputWidth": $inputLengthMedium,
+    "labelOffset": $labelOffsetInput,
+  ),
+  "k-picker": (
+    "inputWidth": $inputLengthLarge,
+    "labelOffset": $labelOffsetPicker,
+  ),
+  "k-combobox": (
+    "inputWidth": $inputLengthLarge,
+    "labelOffset": $labelOffsetPicker,
+  ),
+  "k-multiselect": (
+    "inputWidth": $inputLengthLarge,
+    "labelOffset": $labelOffsetPicker,
+  ),
+  "k-textbox": (
+    "inputWidth": $inputLengthLarge,
+  ),
+  "k-textarea": (
+    "inputWidth": $inputLengthLarge,
+  ),
+  "app-input-value_sm": (
+    "inputWidth": $inputLengthSmall,
+  ),
+  "app-input-value_md": (
+    "inputWidth": $inputLengthMedium,
+  ),
+  "app-input-value_lg": (
+    "inputWidth": $inputLengthLarge,
+  ),
+  "app-input-value-picker": (
+    "inputWidth": $inputLengthLarge,
+    "labelOffset": 7em,
+  ),
+  "app-date-range-picker": (
+    "inputWidth": $inputLengthSmall,
+  ),
+);

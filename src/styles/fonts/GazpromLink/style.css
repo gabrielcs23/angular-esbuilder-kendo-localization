@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'GazpromLink';
+  src:
+    url('fonts/GazpromLink.ttf?t1tcn2') format('truetype'),
+    url('fonts/GazpromLink.woff?t1tcn2') format('woff'),
+    url('fonts/GazpromLink.svg?t1tcn2#GazpromLink') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.app-shortcut__icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'GazpromLink' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-shortcut__icon_analytics:before {
+  content: "\e905";
+}
+.app-shortcut__icon_lands:before {
+  content: "\e904";
+}
+.app-shortcut__icon_map:before {
+  content: "\e900";
+}
+.app-shortcut__icon_projects:before {
+  content: "\e901";
+}
+.app-shortcut__icon_quarries:before {
+  content: "\e902";
+}
+.app-shortcut__icon_transport:before {
+  content: "\e903";
+}

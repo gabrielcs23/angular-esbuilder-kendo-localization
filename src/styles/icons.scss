@@ -1,0 +1,18 @@
+@use "_variables" as *;
+@use "mixins" as mixin;
+
+/** Значек основанный на кастомных шрифтах */
+.app-icon {
+  @include mixin.app-menu-icon;
+
+  font-size: $iconSize;
+  border-radius: $iconPadding;
+  margin: -0.25em 0;
+}
+
+.app-icon_empty {
+  background-color: transparent;
+  visibility: hidden;
+  width: 1em;
+  height: 1em;
+}

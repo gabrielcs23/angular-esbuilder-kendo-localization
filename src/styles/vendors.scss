@@ -1,0 +1,264 @@
+/*
+    Файл для подключения стилей библиотек.
+ */
+
+@use "sass:math" as math;
+@use "_variables" as *;
+@use "themes" as kendo;
+@use "mixins" as mixin;
+/*импортируем через @use, иначе тема затирает `font-family` у `fa-` при использовании с `k-icon`*/
+@use "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@use "@fortawesome/fontawesome-free/scss/regular.scss";
+@use "@fortawesome/fontawesome-free/scss/solid.scss";
+
+@import "devextreme-dist/css/dx.softblue.css";
+@import "devexpress-gantt/dist/dx-gantt.css";
+
+@import "bootstrap/dist/css/bootstrap.css";
+@import "ngx-toastr/toastr";
+@import "@technocom/common/styles.css";
+@import "@technocom/auth/styles.css";
+@import "@technocom/ui/styles.css";
+@import "@technocom/core/styles.css";
+@import "@technocom/data/styles.css";
+@import "viewerjs/dist/viewer.css";
+
+/*toastr*/
+.toast-container {
+  max-height: 90%;
+  overflow: hidden;
+
+  .toast-message {
+    max-height: 300px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+  }
+
+  .ngx-toastr {
+    width: auto;
+    min-width: 300px;
+    max-width: 592px;
+  }
+}
+
+/*DevExtreme*/
+.dx-widget {
+  font-size: kendo.$kendo-font-size;
+  font-family: kendo.$kendo-font-family;
+}
+.dx-toolbar {
+  background-color: kendo.$kendo-base-bg;
+}
+.dx-treelist {
+  .dx-treelist-headers {
+    color: kendo.$kendo-body-text;
+    background-color: kendo.$kendo-base-bg;
+  }
+}
+.dx-gantt {
+  .dx-gantt-toolbar-wrapper {
+    background-color: kendo.$kendo-base-bg;
+  }
+  .dx-gantt-header {
+    .dx-gantt-tsac,
+    .dx-gantt-tsa,
+    .dx-gantt-hb,
+    .dx-gantt-vb {
+      color: kendo.$kendo-body-text;
+      background-color: kendo.$kendo-base-bg;
+    }
+  }
+}
+
+/*Switch*/
+.k-switch {
+  width: auto;
+
+  .k-switch-track {
+    /*добавляем отступы от краёв*/
+    padding: 0 1rem;
+    /*динамическая ширина под любой текст*/
+    width: auto;
+    min-width: 4rem;
+
+    /*отступ для правильной работы динамической ширины*/
+    $offset: 1.75rem;
+
+    .k-switch-label-on {
+      margin-right: $offset;
+    }
+    .k-switch-label-off {
+      margin-left: $offset;
+    }
+  }
+}
+
+/*Validation*/
+.k-input,
+.k-checkbox,
+.k-radio,
+.k-calendar,
+.k-picker,
+.k-upload {
+  /* показываем окантовку и без `ng-touched` */
+  &.ng-invalid {
+    border-color: $danger;
+
+    .k-input-validation-icon {
+      color: $danger;
+    }
+  }
+}
+
+/*Calendar*/
+.k-calendar {
+  &-td {
+    &.k-disabled .k-link {
+      pointer-events: auto;
+      cursor: not-allowed;
+      opacity: 0.3;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+/*спиннер для асинхронного валидатора*/
+.ng-pending:not(form) {
+  position: relative;
+  overflow: visible;
+
+  &::after {
+    $size: 1em;
+
+    animation: k-loading-animation 0.7s linear infinite;
+    position: absolute;
+    content: "";
+    width: $size;
+    height: $size;
+    top: 50%;
+    right: -#{$size + math.div($size, 2)};
+    margin-top: -#{math.div($size, 2)};
+    border: thin solid;
+    border-radius: 50%;
+    border-top-color: transparent;
+  }
+}
+
+/*Buttons*/
+.k-icon-button.k-button-flat.k-button-lg {
+  /*уменьшаем отступы у кнопок-значков в таблице, чтобы не были слишком широкими*/
+  .k-grid & {
+    padding: 0.7rem 0.25rem;
+  }
+}
+.k-button-md {
+  /*уменьшаем отступы для кнопок внутри инпутов, чтобы не скакала высота*/
+  .k-input & {
+    padding-top: 0.425rem;
+    padding-bottom: 0.425rem;
+  }
+}
+
+/*tabstrip*/
+.k-tabstrip {
+  height: 100%;
+
+  .k-content {
+    height: auto;
+  }
+}
+.k-tabstrip_stretch {
+  overflow: auto;
+
+  .k-content {
+    height: 100%;
+    overflow: auto;
+  }
+}
+
+/*grid*/
+.k-treelist,
+.k-grid {
+  width: 100%;
+  height: 100%;
+
+  & .k-table-th {
+    height: 2em;
+  }
+
+  /*при объединении "первая" ячейка строки может быть вовсе не первой*/
+  .k-table-td:first-child:not([ng-reflect-col-index="0"]) {
+    border-inline-start-width: thin;
+  }
+
+  /*чтобы можно было прокручивать locked часть таблицы*/
+  .k-grid-header-locked {
+    max-width: calc(50% + var(--kendo-scrollbar-width, /*#{$kendo-scrollbar-width}*/ 17px) / 2);
+  }
+  .k-grid-content-locked {
+    max-width: 50%;
+    /*принудительно затираем высоту, выставленную через код*/
+    height: 100% !important;
+
+    &,
+    & + .k-grid-content {
+      /*чтобы строки были всегда выровнены*/
+      overflow-x: scroll;
+    }
+  }
+}
+
+/*window*/
+.k-dialog-titlebar,
+.k-dialog-content {
+  /* ограничиваем ширину диалогов на треть ширины экрана по умолчанию*/
+  max-width: 33vw;
+}
+/*чтобы кнопки не наезжали на контент (убрать после перехода на 6 тему)*/
+.k-window-actions {
+  margin: 0;
+}
+
+/*ТЕХНОКОМ*/
+.tk-page__caption {
+  color: $blue;
+  flex: 0 0 auto;
+  font-size: 1.375em;
+  font-weight: 700;
+
+  /*для страниц, где требуется показать подзаголовок (например, справочник)*/
+  & > .tk-title + .tk-text {
+    margin-left: 0.5em;
+    font-weight: normal;
+  }
+}
+.tk-page__sidebar {
+  width: 25%;
+}
+.tk-page {
+  .k-tabstrip &,
+  .tk-page__content & {
+    padding: 0;
+  }
+}
+
+.tk-attr-tooltip .k-tooltip {
+  background-color: $grey;
+}
+
+.tk-progress-indicator__text {
+  text-shadow: 0 0 0.5em currentColor;
+}
+
+.fas {
+  @include mixin.app-menu-icon;
+}
+
+/** Класс флаг для длинных заголовков в tabpage */
+.tab-page-title-length .k-tabstrip-items .k-item {
+  max-width: 33%;
+  text-align: center;
+}
