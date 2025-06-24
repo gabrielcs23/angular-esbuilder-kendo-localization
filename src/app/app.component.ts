@@ -1,9 +1,13 @@
 import {Component, Inject, LOCALE_ID} from '@angular/core';
+import { KENDO_GRID } from '@progress/kendo-angular-grid';
 
 @Component({
-  //standalone: true,
+  standalone: true,
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  imports: [
+    KENDO_GRID
+  ]
 })
 export class AppComponent {
 

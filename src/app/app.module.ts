@@ -5,13 +5,13 @@ import {GridModule} from "@progress/kendo-angular-grid";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
-  declarations: [AppComponent],
+  // declarations: [AppComponent],
   imports: [
     BrowserModule,
     GridModule,
     BrowserAnimationsModule
   ],
-  bootstrap: [AppComponent],
+  // bootstrap: [AppComponent],
   exports: [],
 })
 export class AppModule {
